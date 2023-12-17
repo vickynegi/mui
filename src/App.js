@@ -12,11 +12,14 @@ function clear(){
 
 function App() {
   const [display, setDisplay] = useState('')
-  const callback = (value) =>{setDisplay(display + value)}
+  const callback = (value) =>{ setDisplay(display + value) }
   console.log("callback - App", callback)
 
-  const backspaceCallback = () =>{setDisplay(display.substring(0, display.length -1))}
-  return (
+  const backspaceCallback = () =>{ setDisplay(display.substring(0, display.length -1)) }
+  
+  const eqlCallback = () =>{ setDisplay(eval(display)) }
+
+    return (
     <div className="App">
       <table id="calcu"> 
         <tr> 
@@ -47,7 +50,7 @@ function App() {
         <tr>
             <CustomButton value={0} callback={callback} />
             <CustomButton value={'.'} callback={callback} />
-            <CustomEqualButton value={'='}  />
+            <CustomEqualButton value={'='}  callback={eqlCallback} />
             <CustomButton value={'+'} callback={callback} />
             
             

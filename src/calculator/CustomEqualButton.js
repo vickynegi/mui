@@ -1,7 +1,8 @@
 export function CustomEqualButton(props){
-    console.log("equla button-", props.value)
+    console.log("equla button-", props.callback)
    return (
-     <td><input type="button" value="=" onClick={() =>{result()}}/></td> 
+    //  <td><input type="button" value="=" onClick={() =>{result()}}/></td>
+     <td><input type="button" value="=" onClick={() =>{props.callback()}}/></td> 
    )
  }
 
